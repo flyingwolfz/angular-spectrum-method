@@ -3,6 +3,28 @@ simple matlab function of angular spectrum method of fast calculation of diffrac
 
 简单的角谱衍射计算matlab函数，可以设置是否加入带限、是否填0等。
 
+function[final] = ASM(shift,cut,direction,bandlimit,quan,mu,z,pitch,lambda)
+
+1-yes 0-no 1-是 0-否
+
+shift:fftshift 要不要加fftshift
+
+cut:output is set as the same size of input 要不要剪裁为原图大小
+
+direction:direction of the propagation 传播方向
+
+bandlimit:band-limited ASM 是否用带限角谱
+
+quan:input of the complex wave field 输入复振幅
+
+mu:zero padding size(How many times the size of the original complex wave field) 填0为原图大小的几倍
+
+z:distance 距离
+
+pitch: pixel size 像素大小
+
+lambda: wavelength 波长
+
 example: quan=ASM(1,1,1,1,p,2,300,pitch,lambda); 
 
 示例: quan=ASM(1,1,1,1,p,2,300,pitch,lambda); 
