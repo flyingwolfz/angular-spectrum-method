@@ -1,3 +1,4 @@
+%https://github.com/flyingwolfz/angular-spectrum-method
 %angular spectrum method of fast calculation of diffraction 角谱衍射计算
 %1-yes 0-no 1-是 0-否
 %shift:fftshift 要不要加fftshift
