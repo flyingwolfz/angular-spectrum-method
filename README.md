@@ -5,7 +5,6 @@ simple matlab function of angular spectrum method of fast calculation of diffrac
 
 function[final] = ASM(shift,cut,direction,bandlimit,quan,mu,z,pitch,lambda)
 
-1-yes 0-no 1-是 0-否
 
 shift:fftshift 要不要加fftshift
 
@@ -25,9 +24,12 @@ pitch: pixel size 像素大小
 
 lambda: wavelength 波长
 
-example: quan=ASM(1,1,1,1,p,2,300,pitch,lambda); 
+example，示例:
 
-示例: quan=ASM(1,1,1,1,p,2,300,pitch,lambda); 
+             finallimit=ASM('shift','cut','forward','limit',p,1,z,pitch,lambda);
+
+             finallimit=ASM('noshift','nocut','backward','nolimit',p,1,z,pitch,lambda);
+
 
 the band limitation method is from "Band-Limited Angular Spectrum Method for Numerical Simulation of Free-Space Propagation in Far and Near Fields"
 
