@@ -10,7 +10,6 @@
 %z:distance 距离
 %pitch: pixel size 像素大小
 %lambda: wavelength 波长
-%example:示例 quan=ASM(1,1,1,1,p,2,300,8*10^(-3),638*10^(-6)); 
 function[final] = ASM(shift,cut,direction,bandlimit,quan,mu,z,pitch,lambda)
 
 [kuan,chang] = size(quan);
