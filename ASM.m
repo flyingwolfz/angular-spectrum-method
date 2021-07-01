@@ -1,6 +1,5 @@
 %https://github.com/flyingwolfz/angular-spectrum-method
 %angular spectrum method of fast calculation of diffraction 角谱衍射计算
-%1-yes 0-no 1-是 0-否
 %shift:fftshift 要不要加fftshift
 %cut:output is set as the same size of input 要不要剪裁为原图大小
 %direction:direction of the propagation 传播方向
@@ -26,26 +25,25 @@ yy=-a/2+0.5:(a/2-1)+0.5;
 xx=-b/2+0.5:(b/2-1)+0.5;
 [x,y]=meshgrid(xx*u0,yy*v0);
 quan2(1+a/2-kuan/2:a/2+kuan/2,1+b/2-chang/2:b/2+chang/2)=quan;
-if(direction==1)
+if(strcmp(direction,'forward'))
     trans=exp(1i*2*pi/lambda*z*sqrt(1-(lambda*x).^2-(lambda*y).^2));
 else
     trans=exp(-1i*2*pi/lambda*z*sqrt(1-(lambda*x).^2-(lambda*y).^2));
 end
-if(bandlimit==1)
+if(strcmp(bandlimit,'limit'))
     xlimit=1/sqrt((2*1/b/pitch*z)^2+1)/lambda;
     ylimit=1/sqrt((2*1/a/pitch*z)^2+1)/lambda;
     trans(abs(x)>xlimit)=0;
     trans(abs(y)>ylimit)=0;
 end
-if(shift==1)
+if(strcmp(shift,'shift'))
     final=ifft2(trans.*fftshift(fft2(quan2)));
 else
     final=ifft2(trans.*(fft2(quan2)));
 end
-if(cut==1)
+if(strcmp(cut,'cut'))
  cutfinal=final(1+a/2-kuan/2:a/2+kuan/2,1+b/2-chang/2:b/2+chang/2);
  final=cutfinal;
 end
 
 end
-
