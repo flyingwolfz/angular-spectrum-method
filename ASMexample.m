@@ -9,8 +9,8 @@ z=pitch*1024*200;
 pitch=8*10^(-3);
 lambda=638*10^(-6);
 
-final=ASM('shift','cut','forward','nolimit',p,1,z,pitch,lambda);
-finallimit=ASM('shift','cut','forward','limit',p,1,z,pitch,lambda);
+final=ASM('cut','forward','nolimit',p,1,z,pitch,lambda);
+finallimit=ASM('cut','forward','limit',p,1,z,pitch,lambda);
 
 subplot(1,3,1)
 imshow(p);
