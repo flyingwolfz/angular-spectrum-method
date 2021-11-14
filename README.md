@@ -29,6 +29,8 @@ example，示例:
              finallimit=ASM('cut','forward','limit',p,1,z,pitch,lambda);
 
              finallimit=ASM('nocut','backward','nolimit',p,1,z,pitch,lambda);
+             
+             finallimit=ASMshift('shift','nocut','backward','nolimit',p,1,z,pitch,lambda);
 
 
 the band limitation method is from "Band-Limited Angular Spectrum Method for Numerical Simulation of Free-Space Propagation in Far and Near Fields"
